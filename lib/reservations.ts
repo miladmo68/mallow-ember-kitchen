@@ -38,7 +38,8 @@ export function availableTimes(date:string,partySize:number,existing:Reservation
   const difference = Math.floor((day.getTime() - today.getTime()) / 86_400_000);
   if (difference < 0 || difference > 30) return [];
   return serviceTimes.filter((time) => {
-    const slot = new Date(day.getFullYear(),day.getMonth(),day.getDate(),...time.split(":").map(Number));
+    const [hour,minute] = time.split(":").map(Number);
+    const slot = new Date(day.getFullYear(),day.getMonth(),day.getDate(),hour,minute);
     return slot.getTime() > now.getTime() + 90 * 60_000 && availableTable(date,time,partySize,existing) !== null;
   });
 }
