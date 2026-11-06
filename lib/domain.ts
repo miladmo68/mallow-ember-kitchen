@@ -15,5 +15,5 @@ export type MenuItem = {
 export type CartLine = { itemId: string; quantity: number };
 export type OrderType = "Pickup" | "Dine-in";
 export type CartTotals = { subtotalCents: number; taxCents: number; totalCents: number; itemCount: number };
-export type Reservation = { id: string; date: string; time: string; partySize: number; guestName: string; email: string; notes: string; createdAt: string };
+export type Reservation = { id: string; date: string; time: string; partySize: number; tableId: string; guestName: string; email: string; notes: string; createdAt: string };
 export type Order = { id: string; type: OrderType; lines: CartLine[]; subtotalCents: number; taxCents: number; totalCents: number; name: string; email: string; pickupTime: string; createdAt: string };
