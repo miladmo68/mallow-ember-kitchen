@@ -53,3 +53,18 @@ test("table assignment and overlapping seating prevent overbooking", () => {
   const full = createReservation({date:"2026-11-07",time:"18:00",partySize:2,guestName:"Late Guest",email:"late@example.com",notes:""},bookings,now);
   assert.equal(full.ok,false);
 });
+
+const { parseSavedOrders, parseSavedReservations, repeatOrderLines } = require("../.test-dist/lib/orderHistory.js");
+
+test("saved previews reject malformed records and recalculate totals", () => {
+  const order={id:"ME-1",name:"Alex",email:"alex@example.com",pickupTime:"2026-11-08T18:00:00.000Z",createdAt:"2026-11-07T12:00:00.000Z",lines:[{itemId:"espresso",quantity:2}],totalCents:1};
+  const parsed=parseSavedOrders([null,{...order,lines:[{itemId:"unknown",quantity:2}]},order]);
+  assert.equal(parsed.length,1);
+  assert.equal(parsed[0].totalCents,1130);
+  assert.deepEqual(repeatOrderLines(parsed[0]),[{itemId:"espresso",quantity:2}]);
+});
+
+test("saved reservation parser ignores invalid or corrupted entries", () => {
+  const good={id:"ME-R-1",date:"2026-11-08",time:"18:00",partySize:3,tableId:"window-4",guestName:"Alex",email:"alex@example.com",notes:"",createdAt:"2026-11-07T12:00:00.000Z"};
+  assert.deepEqual(parseSavedReservations([{...good,tableId:"unknown"},good]),[good]);
+});
