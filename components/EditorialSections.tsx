@@ -11,7 +11,8 @@ export function EditorialSections() {
       </div>
       <div className="story-image-wrap"><img src={photos.pasta} alt="Editorial photograph of a plated pasta dish at a dining table" loading="lazy" /><span className="image-note">A little something to share<br />— always.</span></div>
     </section>
-    <section className="editorial-gallery section-shell" aria-label="A taste of the table"><div><span className="section-kicker">Shared & savoured</span><h2>For the moments<br /><em>in between.</em></h2></div><figure><img src={photos.chicken} alt="Licensed editorial photograph of a plated shared dish" loading="lazy" /><figcaption>Made for sharing</figcaption></figure><figure><img src={photos.beets} alt="Licensed editorial photograph of a colorful vegetable plate" loading="lazy" /><figcaption>Seasonal by nature</figcaption></figure></section>\n    <section className="manifesto-section" aria-label="Our approach">
+    <section className="editorial-gallery section-shell" aria-label="A taste of the table"><div><span className="section-kicker">Shared & savoured</span><h2>For the moments<br /><em>in between.</em></h2></div><figure><img src={photos.chicken} alt="Licensed editorial photograph of a plated shared dish" loading="lazy" /><figcaption>Made for sharing</figcaption></figure><figure><img src={photos.beets} alt="Licensed editorial photograph of a colorful vegetable plate" loading="lazy" /><figcaption>Seasonal by nature</figcaption></figure></section>
+    <section className="manifesto-section" aria-label="Our approach">
       <div className="manifesto-orbit" aria-hidden="true">✳</div>
       <p>From the first bite<br />to the last story.</p>
       <span>Gather often. Eat well. Stay longer.</span>

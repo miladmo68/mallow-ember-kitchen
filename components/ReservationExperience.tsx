@@ -50,7 +50,7 @@ export function ReservationExperience() {
           <div className="reservation-fields contact-fields"><label>Your name<input type="text" autoComplete="name" value={name} onChange={(e) => setName(e.target.value)} required placeholder="Name for the table" /></label><label>Email address<input type="email" autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} required placeholder="you@example.com" /></label></div>
           <label className="notes-label">Anything we should know?<textarea value={notes} maxLength={300} onChange={(e) => setNotes(e.target.value)} placeholder="A celebration, accessibility needs, dietary notes..." rows={3} /></label>
           {error && <p className="reservation-error" role="alert">{error}</p>}
-          <button type="submit" className="reservation-submit" disabled={!slots.length}>Reserve a table preview <span>↗</span></button>
+          <button type="submit" className="reservation-submit" disabled={!slots.length || !time}>Reserve a table preview <span>↗</span></button>
           <p className="small-truth">Interactive concept only. This does not make a real booking.</p>
         </form>
       </>}

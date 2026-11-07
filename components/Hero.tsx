@@ -4,7 +4,7 @@ import { photos } from "../lib/photos";
 export function Hero() {
   return <div id="top" className="hero-wrap">
     <BrandHeader />
-    <main className="hero section-shell">
+    <section className="hero section-shell">
       <div className="hero-copy">
         <p className="hero-overline">A neighbourhood table · Toronto</p>
         <h1>Come hungry.<br /><em>Stay awhile.</em></h1>
@@ -14,6 +14,6 @@ export function Hero() {
       </div>
       <div className="hero-photo"><img src={photos.room} alt="Warm restaurant interior photographed for editorial atmosphere" /><div className="hero-photo-label"><span>At the table</span><strong>Every meal is an occasion.</strong></div></div>
       <div className="hero-side-note" aria-hidden="true">SEASONAL / SHARED / SLOW</div>
-    </main>
+    </section>
   </div>;
 }
