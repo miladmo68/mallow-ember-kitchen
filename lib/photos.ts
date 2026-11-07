@@ -1,5 +1,8 @@
-/** Editorial stock photography; source and license are recorded in PHOTO_CREDITS.md. */
+/** Licensed editorial photography; see PHOTO_CREDITS.md. */
+const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 export const photos = {
-  room: "https://images.pexels.com/photos/35833832/pexels-photo-35833832.jpeg?auto=compress&cs=tinysrgb&w=1600&q=82",
-  pasta: "https://images.pexels.com/photos/8414741/pexels-photo-8414741.jpeg?auto=compress&cs=tinysrgb&w=1200&q=82"
+  room: base + "/images/room.jpg",
+  pasta: base + "/images/pasta.jpg",
+  chicken: base + "/images/chicken.jpg",
+  beets: base + "/images/beets.jpg"
 } as const;
