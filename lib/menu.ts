@@ -17,7 +17,7 @@ export function normaliseCart(lines: CartLine[], items: MenuItem[] = menu): Cart
   const byId = new Map(items.filter((item) => item.available).map((item) => [item.id, item]));
   const quantities = new Map<string, number>();
   for (const line of lines) {
-    if (!byId.has(line.itemId) || !Number.isSafeInteger(line.quantity) || line.quantity < 1) continue;
+    if (!line || typeof line !== "object" || typeof line.itemId !== "string" || !byId.has(line.itemId) || !Number.isSafeInteger(line.quantity) || line.quantity < 1) continue;
     quantities.set(line.itemId, Math.min(20, (quantities.get(line.itemId) ?? 0) + line.quantity));
   }
   return [...quantities.entries()].map(([itemId, quantity]) => ({ itemId, quantity }));
