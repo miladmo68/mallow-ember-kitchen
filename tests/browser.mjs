@@ -30,7 +30,7 @@ try {
     assert(await page.locator(".hero-photo img").evaluate((img)=>img.complete&&img.naturalWidth>0),name+": licensed image");
     assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2),name+": horizontal overflow");
     await page.screenshot({path:"public/screenshots/"+name+".png",fullPage:true});
-    await page.getByRole("searchbox",{name:"Search the menu"}).fill("tomato");
+    await page.getByRole("searchbox",{name:"Search the menu"}).fill("late-harvest");
     assert(await page.locator(".menu-card").count()===1,name+": search");
     await page.getByRole("searchbox",{name:"Search the menu"}).fill("");
     await page.getByRole("combobox",{name:"Dietary preference"}).selectOption("Vegan");
