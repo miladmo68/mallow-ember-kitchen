@@ -33,9 +33,8 @@ try {
     await page.getByRole("searchbox",{name:"Search the menu"}).fill("tomato");
     assert(await page.locator(".menu-card").count()===1,name+": search");
     await page.getByRole("searchbox",{name:"Search the menu"}).fill("");
-    await page.getByRole("button",{name:"Vegan",exact:true}).click().catch(async()=>{
-      await page.getByRole("combobox",{name:"Dietary preference"}).selectOption("Vegan");
-    });
+    await page.getByRole("combobox",{name:"Dietary preference"}).selectOption("Vegan");
+    assert(await page.locator(".menu-card").count()>0,name+": dietary filter");
     await page.getByRole("combobox",{name:"Dietary preference"}).selectOption("All");
     await page.getByRole("button",{name:"Add Whipped ricotta & hot honey to basket"}).click();
     await page.getByRole("button",{name:/Open your basket with 1 items/}).click();
@@ -43,7 +42,7 @@ try {
     await page.getByRole("button",{name:/Continue to pickup/}).click();
     await page.getByRole("button",{name:/Create order preview/}).click();
     assert(await page.getByText(/Enter a name between/).isVisible(),name+": checkout validation");
-    await page.getByLabel("Your name").fill("Alex Rivera");
+    await page.getByLabel("Your name").first().fill("Alex Rivera");
     await page.getByLabel("Email address").first().fill("alex@example.com");
     await page.getByLabel("Pickup time").selectOption({index:1});
     await page.getByRole("button",{name:/Create order preview/}).click();
@@ -54,10 +53,7 @@ try {
     await page.keyboard.press("Escape");
     assert(await page.getByRole("dialog",{name:"Your basket"}).count()===0,name+": escape");
     const reserve=page.locator("#reserve");
-    await reserve.getByRole("button",{name:"18:00"}).first().click().catch(async()=>{
-      const first=reserve.locator(".time-grid button").first();
-      await first.click();
-    });
+    await reserve.locator(".time-grid button").first().click();
     await reserve.getByPlaceholder("Name for the table").fill("Alex Rivera");
     await reserve.getByPlaceholder("you@example.com").fill("alex@example.com");
     await reserve.getByRole("button",{name:/Reserve a table preview/}).click();
