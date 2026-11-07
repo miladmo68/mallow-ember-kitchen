@@ -4,8 +4,8 @@ Mallow & Ember is an original fictional restaurant concept. These licensed photo
 
 | Use | Photographer | Source | License |
 | --- | --- | --- | --- |
-| Dining-room atmosphere | Sóc Năng Động | https://www.pexels.com/photo/cozy-restaurant-interior-with-dining-setup-35833832/ | Pexels License |
-| Pasta editorial | Aayush Rawat | https://www.pexels.com/photo/a-pasta-dish-on-a-table-8414741/ | Pexels License |
+| Dining-room atmosphere | Kübra KUZU | https://www.pexels.com/photo/elegant-modern-restaurant-interior-with-dining-set-40560764/ | Pexels License |
+| Pasta editorial | Dextar Studio ™ | https://www.pexels.com/photo/delicious-pasta-on-plate-on-table-15813476/ | Pexels License |
 | Shared-plate editorial | Ludwig Kwan | https://www.pexels.com/photo/a-chicken-with-sauce-on-a-ceramic-plate-12091640/ | Pexels License |
 | Seasonal-vegetable editorial | Dimitris Mourousiadis | https://www.pexels.com/photo/close-up-shot-of-a-greek-cuisine-6468551/ | Pexels License |
 
