@@ -36,7 +36,7 @@ npx playwright install chromium
 npm run qa:browser
 ```
 
-`validate` runs ESLint, TypeScript, domain tests and a production build. `qa:browser` tests the built static output in Chromium at desktop and phone viewports and generates the two screenshots above. The factory workflow performs these checks before publication; the project workflow deploys the verified static output to free GitHub Pages.
+`validate` runs ESLint, TypeScript, domain tests and a production build. `qa:browser` tests the built static output in Chromium at desktop and phone viewports and generates the two screenshots above. The deploy workflow runs the same checks and publishes the static output to GitHub Pages.
 
 ## Image attribution
 
